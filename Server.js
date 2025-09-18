@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new SocketIOServer(server, {
   cors: {
-    origin: "https://ayushchatapp.vercel.app", 
+    origin: "*", 
     methods: ["GET", "POST"],
   },
    transports: ["websocket"]
@@ -38,6 +38,7 @@ app.get("/", (req, res) => {
 server.listen(PORT, () => {
   console.log(`🚀 Server listening on port${PORT}`);
 });
+
 
 
 
