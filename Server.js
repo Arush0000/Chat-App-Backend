@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new SocketIOServer(server, {
   cors: {
-    origin: "http://localhost:5173", // frontend ka URL
+    origin: "*", 
     methods: ["GET", "POST"],
   },
 });
@@ -37,4 +37,5 @@ app.get("/", (req, res) => {
 server.listen(PORT, () => {
   console.log("🚀 Server listening on port 3000");
 });
+
 
