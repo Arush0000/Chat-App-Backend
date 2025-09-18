@@ -30,7 +30,11 @@ socket.on("SendMessage", (data) => {
     console.log(`❌ User disconnected: ${socket.id}`);
   });
 });
+app.get("/", (req, res) => {
+  res.send("✅ Backend is working fine!");
+});
  const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log("🚀 Server listening on port 3000");
 });
+
