@@ -31,13 +31,20 @@ socket.on("SendMessage", (data) => {
     console.log(`❌ User disconnected: ${socket.id}`);
   });
 });
-app.get("/", (req, res) => {
+try{
+app.get("/check", (req, res) => {
   res.send("✅ Backend is working fine!");
 });
+}
+catch(err){
+console.log("error",err);
+}
+
  const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`🚀 Server listening on port${PORT}`);
 });
+
 
 
 
