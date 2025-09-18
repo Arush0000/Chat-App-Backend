@@ -13,6 +13,7 @@ const io = new SocketIOServer(server, {
     origin: "https://ayushchatapp.vercel.app", 
     methods: ["GET", "POST"],
   },
+   transports: ["websocket"]
 });
 
 // har user ke connect hone par
@@ -37,6 +38,7 @@ app.get("/", (req, res) => {
 server.listen(PORT, () => {
   console.log("🚀 Server listening on port 3000");
 });
+
 
 
 
