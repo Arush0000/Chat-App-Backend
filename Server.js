@@ -1,19 +1,13 @@
-import express from 'express';
-import http from 'http';
-import { Server as SocketIOServer } from 'socket.io';
-import cors from 'cors';
-
+import express from "express";
 const app = express();
-app.use(cors());
 
-app.get("/check", (req, res) => {
-  res.send("✅ Backend is working fine!");
+app.get("/name", (req, res) => {
+  res.json({ name: "Ayush" });
 });
 
-
- const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`🚀 Server listening on port${PORT}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
 
 
