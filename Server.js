@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new SocketIOServer(server, {
   cors: {
-    origin: "*", // frontend ka URL
+    origin: "https://ayushchatapp.vercel.app/", // frontend ka URL
     methods: ["GET", "POST"],
   },
 });
@@ -37,6 +37,7 @@ app.get("/name",(req,res)=>{
 server.listen(PORT, () => {
   console.log("🚀 Server listening on port 3000");
 });
+
 
 
 
