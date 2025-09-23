@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new SocketIOServer(server, {
   cors: {
-    origin: "https://ayushchatapp.vercel.app/", // frontend ka URL
+    origin: "https://ayushchatapp.vercel.app", // frontend ka URL
     methods: ["GET", "POST"],
   },
 });
@@ -33,10 +33,14 @@ socket.on("SendMessage", (data) => {
 app.get("/name",(req,res)=>{
   res.json({name:"Ayush Rajput"});
 })
+app.get("/update",(req,res)=>{
+  res.json({status:"Done1"});
+})
  const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log("🚀 Server listening on port 3000");
 });
+
 
 
 
